@@ -11,3 +11,4 @@ bld/
 *.exe
 *.pdb
 *.cache
+.suo
