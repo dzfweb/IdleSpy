@@ -62,14 +62,17 @@ namespace IdleSpy
 
                         var title = IdleSpyHelper.GetActiveWindowTitle();
 
-                        System.Diagnostics.Debug.WriteLine(title);
-                        
-                        var newRow = dataSet.Tables["Log"].NewRow();
-                        newRow[1] = DateTime.Now;
-                        newRow[2] = title;
-                        dataSet.Tables["Log"].Rows.Add(newRow);
+                        if (!string.IsNullOrEmpty(title))
+                        {
+                            System.Diagnostics.Debug.WriteLine(title);
 
-                        dataSet.Tables["Log"].AcceptChanges();
+                            var newRow = dataSet.Tables["Log"].NewRow();
+                            newRow[1] = DateTime.Now;
+                            newRow[2] = title;
+                            dataSet.Tables["Log"].Rows.Add(newRow);
+
+                            dataSet.Tables["Log"].AcceptChanges();
+                        }
                     }
                 }
             }
