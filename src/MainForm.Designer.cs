@@ -92,6 +92,7 @@
             // 
             // txtInterval
             // 
+            this.txtInterval.Enabled = false;
             this.txtInterval.Location = new System.Drawing.Point(82, 13);
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.Size = new System.Drawing.Size(54, 20);

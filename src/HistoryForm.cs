@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IdleSpy
 {
     public partial class HistoryForm : Form
     {
-
         public HistoryForm()
         {
             InitializeComponent();
@@ -20,10 +13,29 @@ namespace IdleSpy
 
         public HistoryForm(DataTable dataTable)
         {
-            InitializeComponent();            
-            this.radGridView1.DataSource = dataTable;
-            this.radGridView1.Columns[0].IsVisible = false;
+            InitializeComponent();
+
+            var logGroupedByTitle = from row in dataTable.AsEnumerable()
+                                    group row by row.Field<string>("Title") into grp
+                                    select new
+                                    {
+                                        Title = grp.Key,
+                                        Time = ParseIdleLogTime(grp.Count())
+                                    };
+
+            this.radGridView1.DataSource = logGroupedByTitle;
         }
-      
+
+        private string ParseIdleLogTime(int second)
+        {
+            if (second < 60)
+                return second + " seconds";
+            else if (second > 60 && second < 3600)
+                return second / 60 + " minutes";
+            else if (second > 3600)
+                return second / 3600 + " hours";
+
+            return second + "";
+        }
     }
 }
