@@ -1,0 +1,12 @@
+c:\dev\IdleSpy\IdleSpy\bin\Debug\IdleSpy.exe.config
+c:\dev\IdleSpy\IdleSpy\bin\Debug\IdleSpy.exe
+c:\dev\IdleSpy\IdleSpy\bin\Debug\IdleSpy.pdb
+c:\dev\IdleSpy\IdleSpy\obj\Debug\IdleSpy.csprojResolveAssemblyReference.cache
+c:\dev\IdleSpy\IdleSpy\obj\Debug\IdleSpy.MainForm.resources
+c:\dev\IdleSpy\IdleSpy\obj\Debug\IdleSpy.Properties.Resources.resources
+c:\dev\IdleSpy\IdleSpy\obj\Debug\IdleSpy.csproj.GenerateResource.Cache
+c:\dev\IdleSpy\IdleSpy\obj\Debug\IdleSpy.exe
+c:\dev\IdleSpy\IdleSpy\obj\Debug\IdleSpy.pdb
+C:\Dev\IdleSpy\src\bin\Debug\IdleSpy.exe.config
+C:\Dev\IdleSpy\src\obj\Debug\IdleSpy.exe
+C:\Dev\IdleSpy\src\obj\Debug\IdleSpy.pdb
