@@ -110,6 +110,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPower);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "IdleSpy";
             this.Resize += new System.EventHandler(this.frmMain_Resize);
