@@ -131,6 +131,7 @@
             this.btnChart.TabIndex = 3;
             this.btnChart.Text = "Chart";
             this.btnChart.UseVisualStyleBackColor = true;
+            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
             // 
             // MainForm
             // 

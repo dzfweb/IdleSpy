@@ -93,5 +93,11 @@ namespace IdleSpy
             var historyForm = new HistoryForm(dataSet.Copy().Tables["Log"]);
             historyForm.ShowDialog();
         }
+
+        private void btnChart_Click(object sender, EventArgs e)
+        {
+            var chartForm = new ChartForm(dataSet.Copy().Tables["Log"]);
+            chartForm.ShowDialog();
+        }
     }
 }

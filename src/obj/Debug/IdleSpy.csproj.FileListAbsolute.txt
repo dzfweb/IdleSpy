@@ -18,3 +18,4 @@ C:\Dev\IdleSpy\src\obj\Debug\IdleSpy.Properties.Resources.resources
 C:\Dev\IdleSpy\src\obj\Debug\IdleSpy.csproj.GenerateResource.Cache
 C:\Dev\IdleSpy\src\obj\Debug\IdleSpy.HistoryForm.resources
 C:\Dev\IdleSpy\src\obj\Debug\IdleSpy.exe.licenses
+C:\Dev\IdleSpy\src\obj\Debug\IdleSpy.ChartForm.resources
