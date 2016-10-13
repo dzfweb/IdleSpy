@@ -37,7 +37,9 @@
             this.cbxLoadWithWindows = new System.Windows.Forms.CheckBox();
             this.txtInterval = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataSet = new IdleSpy.Data();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -66,6 +68,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.cbxLoadWithWindows);
             this.panel1.Controls.Add(this.txtInterval);
             this.panel1.Controls.Add(this.label1);
@@ -77,6 +80,7 @@
             // cbxLoadWithWindows
             // 
             this.cbxLoadWithWindows.AutoSize = true;
+            this.cbxLoadWithWindows.Enabled = false;
             this.cbxLoadWithWindows.Location = new System.Drawing.Point(22, 42);
             this.cbxLoadWithWindows.Name = "cbxLoadWithWindows";
             this.cbxLoadWithWindows.Size = new System.Drawing.Size(114, 17);
@@ -102,6 +106,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Interval (ms)";
             // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "Data";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,6 +118,7 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPower);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -116,6 +126,7 @@
             this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -129,6 +140,7 @@
         private System.Windows.Forms.TextBox txtInterval;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbxLoadWithWindows;
+        private Data dataSet;
     }
 }
 

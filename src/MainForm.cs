@@ -8,12 +8,12 @@ namespace IdleSpy
 {
     public partial class MainForm : Form
     {
-        private bool IdleSpyStatus = false;
+        private bool IdleSpyStatus = true;
         public MainForm()
         {
             InitializeComponent();
             backgroundWorker1.RunWorkerAsync();
-            RefreshPowerButton();
+            RefreshPowerButton();            
         }
 
         public void RefreshPowerButton()
@@ -58,9 +58,18 @@ namespace IdleSpy
                     }
                     else
                     {
-                        // Perform a time consuming operation and report progress.
-                        System.Threading.Thread.Sleep(500);
-                        System.Diagnostics.Debug.WriteLine(IdleSpyHelper.GetActiveWindowTitle());
+                        System.Threading.Thread.Sleep(int.Parse(txtInterval.Text));
+
+                        var title = IdleSpyHelper.GetActiveWindowTitle();
+
+                        System.Diagnostics.Debug.WriteLine(title);
+                        
+                        var newRow = dataSet.Tables["Log"].NewRow();
+                        newRow[1] = DateTime.Now;
+                        newRow[2] = title;
+                        dataSet.Tables["Log"].Rows.Add(newRow);
+
+                        dataSet.Tables["Log"].AcceptChanges();
                     }
                 }
             }
