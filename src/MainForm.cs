@@ -87,5 +87,11 @@ namespace IdleSpy
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            var historyForm = new HistoryForm(dataSet.Copy().Tables["Log"]);
+            historyForm.ShowDialog();
+        }
     }
 }

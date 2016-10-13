@@ -38,6 +38,8 @@
             this.txtInterval = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataSet = new IdleSpy.Data();
+            this.btnHistory = new System.Windows.Forms.Button();
+            this.btnChart = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             this.SuspendLayout();
@@ -111,11 +113,32 @@
             this.dataSet.DataSetName = "Data";
             this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // btnHistory
+            // 
+            this.btnHistory.Location = new System.Drawing.Point(12, 226);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(60, 23);
+            this.btnHistory.TabIndex = 2;
+            this.btnHistory.Text = "History";
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
+            // btnChart
+            // 
+            this.btnChart.Location = new System.Drawing.Point(78, 226);
+            this.btnChart.Name = "btnChart";
+            this.btnChart.Size = new System.Drawing.Size(60, 23);
+            this.btnChart.TabIndex = 3;
+            this.btnChart.Text = "Chart";
+            this.btnChart.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnChart);
+            this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPower);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -141,6 +164,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbxLoadWithWindows;
         private Data dataSet;
+        private System.Windows.Forms.Button btnHistory;
+        private System.Windows.Forms.Button btnChart;
     }
 }
 
