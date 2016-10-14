@@ -39,12 +39,8 @@ namespace IdleSpy
 
         private string ParseIdleLogTime(int second)
         {
-            var t = TimeSpan.FromMilliseconds(second);
-            return string.Format("{0:D2}h:{1:D2}m:{2:D2}s:{3:D3}ms",
-                        t.Hours,
-                        t.Minutes,
-                        t.Seconds,
-                        t.Milliseconds);
+            var t = TimeSpan.FromSeconds(second);
+            return string.Format("{0:D2} hrs, {1:D2} mins, {2:D2} secs", t.Hours, t.Minutes, t.Seconds);
         }
     }
 }
