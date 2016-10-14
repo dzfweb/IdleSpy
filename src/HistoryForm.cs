@@ -40,9 +40,9 @@ namespace IdleSpy
             if (second < 60)
                 return second + " seconds";
             else if (second > 60 && second < 3600)
-                return second / 60 + " minutes";
+                return second / 60 + " minutes and " + second + " seconds";
             else if (second > 3600)
-                return second / 3600 + " hours";
+                return second / 3600 + " hours and " + second / 60 + " minutes";
 
             return second + "";
         }
