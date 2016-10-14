@@ -15,13 +15,22 @@ namespace IdleSpy
         {
             InitializeComponent();
 
-            var logGroupedByTitle = from row in dataTable.AsEnumerable()
-                                    group row by row.Field<string>("Title") into grp
-                                    select new
-                                    {
-                                        Title = grp.Key,
-                                        Time = ParseIdleLogTime(grp.Count())
-                                    };
+            var logGroupedByTitle = (from row in dataTable.AsEnumerable()
+                                     group row by row.Field<string>("Title") into grp
+                                     orderby grp.Count() descending
+                                     select new
+                                     {
+                                         Title = grp.Key,
+                                         Time = grp.Count()
+                                     })
+                                     .OrderByDescending(p => p.Time)
+                                     .Select((obj, index) =>
+                                     new
+                                     {
+                                         Rank = index+1,
+                                         Title = obj.Title,
+                                         Time = ParseIdleLogTime(obj.Time)
+                                     });
 
             this.radGridView1.DataSource = logGroupedByTitle;
         }
