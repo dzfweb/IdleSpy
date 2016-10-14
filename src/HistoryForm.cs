@@ -1,5 +1,7 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace IdleSpy
@@ -27,7 +29,7 @@ namespace IdleSpy
                                      .Select((obj, index) =>
                                      new
                                      {
-                                         Rank = index+1,
+                                         Rank = index + 1,
                                          Title = obj.Title,
                                          Time = ParseIdleLogTime(obj.Time)
                                      });
@@ -37,14 +39,12 @@ namespace IdleSpy
 
         private string ParseIdleLogTime(int second)
         {
-            if (second < 60)
-                return second + " seconds";
-            else if (second > 60 && second < 3600)
-                return second / 60 + " minutes and " + second + " seconds";
-            else if (second > 3600)
-                return second / 3600 + " hours and " + second / 60 + " minutes";
-
-            return second + "";
+            var t = TimeSpan.FromMilliseconds(second);
+            return string.Format("{0:D2}h:{1:D2}m:{2:D2}s:{3:D3}ms",
+                        t.Hours,
+                        t.Minutes,
+                        t.Seconds,
+                        t.Milliseconds);
         }
     }
 }
