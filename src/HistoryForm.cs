@@ -34,7 +34,15 @@ namespace IdleSpy
                                          Time = ParseIdleLogTime(obj.Time)
                                      });
 
-            this.radGridView1.DataSource = logGroupedByTitle;
+            var source = new BindingSource();
+            source.DataSource = logGroupedByTitle;
+
+            dataGridView1.DataSource = source;
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+
         }
 
         private string ParseIdleLogTime(int second)

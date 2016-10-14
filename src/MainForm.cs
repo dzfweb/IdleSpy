@@ -58,7 +58,7 @@ namespace IdleSpy
                     }
                     else
                     {
-                        System.Threading.Thread.Sleep(int.Parse(txtInterval.Text));
+                        System.Threading.Thread.Sleep(1000);
 
                         var title = IdleSpyHelper.GetActiveWindowTitle();
 
@@ -97,10 +97,5 @@ namespace IdleSpy
             historyForm.ShowDialog();
         }
 
-        private void btnChart_Click(object sender, EventArgs e)
-        {
-            var chartForm = new ChartForm(dataSet.Copy().Tables["Log"]);
-            chartForm.ShowDialog();
-        }
     }
 }
